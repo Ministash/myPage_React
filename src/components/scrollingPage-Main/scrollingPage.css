@@ -1,0 +1,71 @@
+#scrolling-page-background-main{
+    margin: 0 auto;
+    z-index: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 80vw;
+    background-repeat: no-repeat;
+    background-size: cover !important;
+}
+
+.scrolling-page-welcome-message{
+    position: fixed;
+    top: 100px;
+    left: 200px;
+    z-index: 5;
+    background: #640f002d;
+    border: 3px solid #6452003a;
+    width: 220px;
+    height: 400px;
+    transition: all 0.3s ease;
+}
+
+
+.face1{
+    background: url('https://i.imgur.com/YMwllGF.jpg');
+}
+
+.face2{
+    background: url('https://i.imgur.com/2zB0Dsw.jpg');
+}
+
+.face3{
+    background: url('https://i.imgur.com/yhgNGRl.jpg');
+}
+
+.face4{
+    background: url('https://i.imgur.com/cd8M27B.jpg');
+}
+
+.face5{
+    background: url('https://i.imgur.com/E0D45E0.jpg');
+}
+
+.face6{
+    background: url('https://i.imgur.com/JI9fulp.jpg');
+}
+
+.face7{
+    background: url('https://i.imgur.com/g1QDJVj.jpg');
+}
+
+.face8{
+    background: url('https://i.imgur.com/M3JrnaZ.jpg');
+}
+
+.face9{
+    background: url('https://i.imgur.com/KJXAEqG.jpg');
+}
+
+.face10{
+    background: url('https://i.imgur.com/AHcA3cD.jpg');
+}
+
+.face11{
+    background: url('https://i.imgur.com/NLjphCE.jpg');
+}
+
+.whitespace{
+    height: 3000px;
+}

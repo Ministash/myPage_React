@@ -8,7 +8,9 @@ class scrollingPage extends React.Component {
             windowHeight: 0,
             pictures: ["face1", "face3", 'face5', 'face7', 'face9', 'face10', "face11"],
             objectOpacity: 0,
-            currentFace: 'face1'
+            currentFace: 'face1',
+            transitionOp: 0
+
         };
     }
 
@@ -27,11 +29,29 @@ class scrollingPage extends React.Component {
         this.imageAppend(scrolled);
     }
 
+    transitionEffect = () => {
+
+        setTimeout(
+            function() {
+                this.setState({
+                    transitionOp: 1
+                });
+            }
+            .bind(this),
+            1000
+        );
+    
+        this.setState({transitionOp: 0});
+
+
+    }
+
 
     imageAppend = (scrollNum) => {
 
         if (scrollNum < 16.67) {
             this.setState({ currentFace: "face1" });
+            this.transitionEffect();
         }
 
         else if (scrollNum > 16.67 && scrollNum < 33.34) {
@@ -51,6 +71,9 @@ class scrollingPage extends React.Component {
         }
         else if (scrollNum > 83.67 && scrollNum < 99) {
             this.setState({ currentFace: "face10" });
+            this.setState({
+                objectOpacity: 0
+            });
 
         }
         else if (scrollNum === 100) {
@@ -70,6 +93,7 @@ class scrollingPage extends React.Component {
             <div>
 
                 <div className="scrolling-page-image-wrapper">
+                <div className="scrolling-page-transition-item" style={{ opacity: this.state.transitionOp }}></div>
 
                     {this.state.pictures.map((item, i) => {
                         if (this.state.currentFace === item) {

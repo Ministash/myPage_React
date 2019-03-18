@@ -6,9 +6,9 @@ class scrollingPage extends React.Component {
         super(props);
         this.state = {
             windowHeight: 0,
-            faceClassName: "face1",
-            pictures: ["face1", "face2", "face3", 'face4', 'face5', "face6", 'face7', 'face8', 'face9', 'face10', "face11"],
-            objectOpacity: 0
+            pictures: ["face1", "face3", 'face5', 'face7', 'face9', 'face10', "face11"],
+            objectOpacity: 0,
+            currentFace: 'face1'
         };
     }
 
@@ -30,45 +30,32 @@ class scrollingPage extends React.Component {
 
     imageAppend = (scrollNum) => {
 
-
         if (scrollNum < 16.67) {
-            this.setState({
-
-            });
+            this.setState({ currentFace: "face1" });
         }
-        else if (scrollNum > 16.67 && scrollNum < 33.34) {
-            this.setState({
 
-            });
+        else if (scrollNum > 16.67 && scrollNum < 33.34) {
+            this.setState({ currentFace: "face3" });
 
         }
         else if (scrollNum > 33.34 && scrollNum < 50) {
-            this.setState({
-
-            });
+            this.setState({ currentFace: "face5" });
 
         }
         else if (scrollNum > 50 && scrollNum < 66.67) {
-            this.setState({
-
-            });
-
+            this.setState({ currentFace: "face7" });
         }
         else if (scrollNum > 66.67 && scrollNum < 83.67) {
-            this.setState({
-
-            });
+            this.setState({ currentFace: "face9" });
 
         }
         else if (scrollNum > 83.67 && scrollNum < 99) {
-            this.setState({
-
-            });
+            this.setState({ currentFace: "face10" });
 
         }
         else if (scrollNum === 100) {
+            this.setState({ currentFace: "face11" });
             this.setState({
-
                 objectOpacity: 1
             });
 
@@ -81,16 +68,18 @@ class scrollingPage extends React.Component {
 
         return (
             <div>
-                {this.state.pictures ?
 
-                        this.state.pictures.map(function (item, i) {
-                            return <div key={i} className={item} id="scrolling-page-background-main"></div>
-                        })
-                    
-                    :
+                <div className="scrolling-page-image-wrapper">
+
+                    {this.state.pictures.map((item, i) => {
+                        if (this.state.currentFace === item) {
+                            return <div key={i} className={item} style={{ opacity: 1 }} id="scrolling-page-background-main"></div>
+                        }
+                        return <div key={i} className={item} style={{ opacity: 0 }} id="scrolling-page-background-main"></div>
+                    })}
 
 
-                    <h1>LOADING...</h1>}
+                </div>
 
                 <div className="scrolling-page-welcome-message" style={{ opacity: this.state.objectOpacity }}>Hello Bitches</div>
                 <div className="whitespace"></div>

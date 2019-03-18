@@ -1,13 +1,10 @@
 #scrolling-page-background-main{
-    margin: 0 auto;
-    z-index: 0;
-    position: sticky;
-    top: 0;
+    position: absolute;
     height: 100vh;
     width: 80vw;
     background-repeat: no-repeat;
     background-size: cover !important;
-}
+    transition: all ease 0.3s}
 
 .scrolling-page-welcome-message{
     position: fixed;
@@ -21,37 +18,30 @@
     transition: all 0.3s ease;
 }
 
+.scrolling-page-image-wrapper{
+    margin: 0 auto;
+    z-index: 0;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    width: 80vw;
+}
+
 
 .face1{
     background: url('https://i.imgur.com/YMwllGF.jpg');
-}
-
-.face2{
-    background: url('https://i.imgur.com/2zB0Dsw.jpg');
 }
 
 .face3{
     background: url('https://i.imgur.com/yhgNGRl.jpg');
 }
 
-.face4{
-    background: url('https://i.imgur.com/cd8M27B.jpg');
-}
-
 .face5{
     background: url('https://i.imgur.com/E0D45E0.jpg');
 }
 
-.face6{
-    background: url('https://i.imgur.com/JI9fulp.jpg');
-}
-
 .face7{
     background: url('https://i.imgur.com/g1QDJVj.jpg');
-}
-
-.face8{
-    background: url('https://i.imgur.com/M3JrnaZ.jpg');
 }
 
 .face9{
@@ -66,6 +56,23 @@
     background: url('https://i.imgur.com/NLjphCE.jpg');
 }
 
+/* .face2{
+    background: url('https://i.imgur.com/2zB0Dsw.jpg');
+} */
+
+
+/* .face4{
+    background: url('https://i.imgur.com/cd8M27B.jpg');
+} */
+
+/* .face6{
+    background: url('https://i.imgur.com/JI9fulp.jpg');
+} */
+
+/* .face8{
+    background: url('https://i.imgur.com/M3JrnaZ.jpg');
+} */
+
 .whitespace{
-    height: 3000px;
+    height: 5000px;
 }

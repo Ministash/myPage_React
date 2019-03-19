@@ -1,22 +1,37 @@
+@import url('https://fonts.googleapis.com/css?family=Anton');
+
+.encompassing-wrapper{
+    background: #213634;   
+}
+
 #scrolling-page-background-main{
     position: absolute;
     height: 100vh;
     width: 80vw;
     background-repeat: no-repeat;
     background-size: cover !important;
-    transition: all ease 0.3s;
 }
 
 .scrolling-page-welcome-message{
+    height: 400px;
+    background: #64520077;
+    border: 3px solid #1f1a0160;
     position: fixed;
     top: 100px;
     left: 200px;
     z-index: 5;
-    background: #64520077;
-    border: 3px solid #1f1a0160;
     width: 220px;
-    height: 400px;
     transition: all 1.5s ease;
+    cursor: pointer;
+}
+
+.scroll-page-welcome-message-text{
+    font-size: 60px;
+    line-height: 100px;
+    height: 500px;
+    width: 60px;
+    background: #eeff0177;
+    font-family: 'Anton';
 }
 
 .scrolling-page-image-wrapper{
@@ -41,7 +56,6 @@
     background: #213634;
     height: 8px;
 }
-
 
 
 

@@ -29,7 +29,7 @@ class scrollingPage extends React.Component {
 
         this.imageAppend(scrolled);
 
-        this.setState({scrollingBarWidth: scrolled + "%"});
+        this.setState({ scrollingBarWidth: scrolled + "%" });
     }
 
     imageAppend = (scrollNum) => {
@@ -69,17 +69,27 @@ class scrollingPage extends React.Component {
         }
     }
 
+    clickFunction = (e) =>{
+        e.preventDefault();
+        
+        if(this.state.objectOpacity === 1){
+            console.log("I am ready to click!");
+        }else{
+            console.log("Dont ducking click me!");
+        }
+    }
+
 
 
     render() {
-        console.log(this.state.scrollingBarWidth);
         return (
-            <div>
+            <div className="encompassing-wrapper">
+                
                 <div className="scrolling-page-image-wrapper">
-                <div className="scrolling-page-bar">
-                <div className="scrolling-page-bar-indicator" style={{ width: this.state.scrollingBarWidth }}></div>
-                </div>
-                <div className="scrolling-page-transition-item" style={{ opacity: this.state.transitionOp }}></div>
+                    <div className="scrolling-page-bar">
+                        <div className="scrolling-page-bar-indicator" style={{ width: this.state.scrollingBarWidth }}></div>
+                    </div>
+                    <div className="scrolling-page-transition-item" style={{ opacity: this.state.transitionOp }}></div>
 
                     {this.state.pictures.map((item, i) => {
                         if (this.state.currentFace === item) {
@@ -91,8 +101,8 @@ class scrollingPage extends React.Component {
 
                 </div>
 
-                <div className="scrolling-page-welcome-message" style={{ opacity: this.state.objectOpacity }}>
-                <div className="scroll-page-welcome-message-text">Enter Website</div>
+                <div className="scrolling-page-welcome-message" style={{ opacity: this.state.objectOpacity }} onClick={this.clickFunction}>
+                    <div className="scroll-page-welcome-message-text">Enter Website</div>
                 </div>
                 <div className="whitespace"></div>
 

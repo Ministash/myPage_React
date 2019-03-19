@@ -9,7 +9,8 @@ class scrollingPage extends React.Component {
             pictures: ["face1", "face3", 'face5', 'face7', 'face9', 'face10', "face11"],
             objectOpacity: 0,
             currentFace: 'face1',
-            transitionOp: 0
+            transitionOp: 0,
+            scrollingBarWidth: "0%"
 
         };
     }
@@ -27,31 +28,14 @@ class scrollingPage extends React.Component {
         let scrolled = Math.round((winScroll / winHeight) * 100);
 
         this.imageAppend(scrolled);
+
+        this.setState({scrollingBarWidth: scrolled + "%"});
     }
-
-    transitionEffect = () => {
-
-        setTimeout(
-            function() {
-                this.setState({
-                    transitionOp: 1
-                });
-            }
-            .bind(this),
-            1000
-        );
-    
-        this.setState({transitionOp: 0});
-
-
-    }
-
 
     imageAppend = (scrollNum) => {
 
         if (scrollNum < 16.67) {
             this.setState({ currentFace: "face1" });
-            this.transitionEffect();
         }
 
         else if (scrollNum > 16.67 && scrollNum < 33.34) {
@@ -88,11 +72,13 @@ class scrollingPage extends React.Component {
 
 
     render() {
-
+        console.log(this.state.scrollingBarWidth);
         return (
             <div>
-
                 <div className="scrolling-page-image-wrapper">
+                <div className="scrolling-page-bar">
+                <div className="scrolling-page-bar-indicator" style={{ width: this.state.scrollingBarWidth }}></div>
+                </div>
                 <div className="scrolling-page-transition-item" style={{ opacity: this.state.transitionOp }}></div>
 
                     {this.state.pictures.map((item, i) => {
@@ -105,7 +91,9 @@ class scrollingPage extends React.Component {
 
                 </div>
 
-                <div className="scrolling-page-welcome-message" style={{ opacity: this.state.objectOpacity }}>Hello Bitches</div>
+                <div className="scrolling-page-welcome-message" style={{ opacity: this.state.objectOpacity }}>
+                <div className="scroll-page-welcome-message-text">Enter Website</div>
+                </div>
                 <div className="whitespace"></div>
 
             </div>

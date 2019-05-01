@@ -22,7 +22,6 @@
     z-index: 5;
     width: 220px;
     transition: all 1.5s ease;
-    cursor: pointer;
 }
 
 .scroll-page-welcome-message-text{
@@ -57,13 +56,6 @@
     height: 8px;
 }
 
-.scrolling-page-transition-item{
-    position: absolute;
-    height: 100vh;
-    width: 80vw;
-    background: rgba(255, 255, 255, 0.116);
-}
-
 .whitespace{
-    height: 10000px;
+    height: 20000px;
 }

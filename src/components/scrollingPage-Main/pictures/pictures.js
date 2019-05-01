@@ -11,20 +11,25 @@ class pictures extends React.Component {
         };
     }
 
-    componentWillReceiveProps(nextProps){
+    componentWillReceiveProps(nextProps) {
         this.didSomethingChange(nextProps);
-        this.setState({  importedCurrentFace: nextProps.currentFace });
+        this.setState({ importedCurrentFace: nextProps.currentFace });
     }
 
-    didSomethingChange(nextProps){
-        if(this.state.importedCurrentFace === nextProps.currentFace){
-           //do nothing because we don't care about the thousands of changes
-        }else{
-            //looking for that one time our props actually changes to momentarily flash something on the screen
+    didSomethingChange(nextProps) {
+        if (this.state.importedCurrentFace === nextProps.currentFace) {
+            //do nothing
+        } else {
+            this.setState({ transitionOp: 1 });
             this.theFlash();
         }
     }
 
+    theFlash(){
+        setTimeout(() => {
+            this.setState({ transitionOp: 0 });
+        }, 400);
+    }
 
     render() {
 

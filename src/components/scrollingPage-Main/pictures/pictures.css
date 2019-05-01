@@ -1,34 +1,36 @@
 .face1{
-    /* background: url('https://i.imgur.com/0x64Ibp.jpg'); */
-    background: red;
+    background: url('https://i.imgur.com/0x64Ibp.jpg');
 }
 
 .face3{
-    /* background: url('https://i.imgur.com/pUrOLvy.jpg'); */
-    background: green;
+    background: url('https://i.imgur.com/pUrOLvy.jpg');
 }
 
 .face5{
-    /* background: url('https://i.imgur.com/rwM1QC0.jpg'); */
-    background: black;
+    background: url('https://i.imgur.com/rwM1QC0.jpg');
 }
 
 .face7{
-    /* background: url('https://i.imgur.com/DaZgS5w.jpg'); */
-    background: blue;
+    background: url('https://i.imgur.com/DaZgS5w.jpg');
 }
 
 .face9{
-    /* background: url('https://i.imgur.com/byoFmod.jpg'); */
-    background: red;
+    background: url('https://i.imgur.com/byoFmod.jpg');
 }
 
 .face10{
-    /* background: url('https://i.imgur.com/AHcA3cD.jpg'); */
-    background: green;
+    background: url('https://i.imgur.com/AHcA3cD.jpg');
 }
 
 .face11{
-    /* background: url('https://i.imgur.com/NLjphCE.jpg'); */
-    background: black;
+    background: url('https://i.imgur.com/NLjphCE.jpg');
+}
+
+.scrolling-page-transition-item{
+    position: absolute;
+    transition: all ease 0.3s;
+    height: 100vh;
+    width: 80vw;
+    background: rgba(255, 255, 255, 0.322);
+    z-index: 10;
 }

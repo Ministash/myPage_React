@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Anton');
 
+:root{
+    --opacityVar: 0;
+}
+
 .encompassing-wrapper{
     background: #213634;   
 }
@@ -56,6 +60,47 @@
     height: 8px;
 }
 
-.whitespace{
-    height: 20000px;
+.scrolling-page-arrow-wrapper{
+    z-index: 6;
+    position: fixed;
+    top: 450px;
+    left: 500px;
+    width: 500px;
+    height: 300px;
+    opacity: 0;
+
+}
+
+.scrolling-page-arrow-wrapper:hover{
+    cursor: pointer;
+    --opacityVar: 1;
+}
+
+.scrolling-page-arrow-circle{
+    z-index: 6;
+    width: 150px;
+    height: 150px;
+    border: white solid 3px;
+    position: fixed;
+    top: 590px;
+    left: 670px;
+    border-radius: 100%;
+    opacity: var(--opacityVar);
+    transition: 0.3s all ease;
+}
+
+.scroll-it-arrow{
+    width: 30px;
+    height: 30px;
+    top: 640px;
+    left: 710px;
+    position: fixed;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border: solid black;
+    border-width: 0 20px 20px 0;
+    display: inline-block;
+    padding: 3px;
+    opacity: var(--opacityVar);
+    transition: 0.8s all ease;
 }

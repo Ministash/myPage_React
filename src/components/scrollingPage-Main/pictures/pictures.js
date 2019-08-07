@@ -14,6 +14,7 @@ class pictures extends React.Component {
     componentWillReceiveProps(nextProps) {
         this.didSomethingChange(nextProps);
         this.setState({ importedCurrentFace: nextProps.currentFace });
+        this.setState({ importedPicturePosition: nextProps.position});
     }
 
     didSomethingChange(nextProps) {
@@ -32,7 +33,7 @@ class pictures extends React.Component {
     }
 
     render() {
-
+        console.log(this.state.importedPicturePosition);
         return (
 
             <div>
